@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.managmentproj.HelloController"
+      style="-fx-padding: 20; -fx-background-color: #f9f9f9;">
+
+    <!-- GridPane для ввода данных сотрудников -->
+    <GridPane hgap="10" vgap="10" style="-fx-background-color: #ffffff; -fx-border-color: #ddd; -fx-border-radius: 5; -fx-padding: 10;">
+        <Label text="Name:" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" promptText="Enter name"/>
+
+        <Label text="Type:" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+        <ComboBox fx:id="typeComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Select type"/>
+
+        <Label text="Rate/Salary:" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="rateField" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Enter rate or salary"/>
+
+        <Label text="Hours:" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="hoursField" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Enter hours"/>
+
+        <Button text="Add Employee" onAction="#handleAddEmployee" GridPane.rowIndex="4"
+                style="-fx-background-color: #4caf50; -fx-text-fill: white;"/>
+        <Button text="Remove Employee" onAction="#handleRemoveEmployee" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+    </GridPane>
+
+    <!-- Таблица сотрудников -->
+    <TableView fx:id="employeeTableView" style="-fx-border-color: #ddd; -fx-border-radius: 5;">
+        <columns>
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150"/>
+            <TableColumn text="Type" fx:id="typeColumn" prefWidth="100"/>
+            <TableColumn text="Salary" fx:id="salaryColumn" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>
